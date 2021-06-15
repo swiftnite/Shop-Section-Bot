@@ -18,19 +18,19 @@ def main():
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
         auth.set_access_token(access_token, access_token_secret)
         api = tweepy.API(auth)
-        response = get('https://fn-api.com/api/shop_categories')
+        response = get('https://fn-api.com/api/shop/sections')
         if response:
-            main = get('https://fn-api.com/api/shop_categories')
-            stamp = main.json()['timestamp']
-            res = main.json()['shopCategories']
-            with open('cache.json', 'r') as fnapi_file:
-                old = json.load(fnapi_file)
+            main = get('https://fn-api.com/api/shop/sections')
+            stamp = main.json()['data']['hash']
+            res = main.json()['data']['sections']
+            with open('cache.json', 'r') as cach:
+                old = json.load(cach)
             if stamp != old:
                 print("changes detected!")
                 my_file = open(f"sections.txt","w+")
                 my_file.write(f"{Heading}\n\n")
                 for i in res:
-                    name=i["sectionName"]
+                    name=i["name"]
                     if i["quantity"] != 1:
                         quantity=i["quantity"]
                         if Brackets == "True":
