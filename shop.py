@@ -11,6 +11,7 @@ access_token_secret = keys.access_token_secret
 Heading = customisation.Heading
 Brackets = customisation.Brackets
 point = customisation.point
+lang = customisation.lang
 print("\n\nWelcome to Swift-Nite's Shop Section Bot!\n\n")
 
 def main():
@@ -18,9 +19,9 @@ def main():
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
         auth.set_access_token(access_token, access_token_secret)
         api = tweepy.API(auth)
-        response = get('https://fn-api.com/api/shop/sections')
+        response = get(f'https://fn-api.com/api/shop/sections?lang={lang}')
         if response:
-            main = get('https://fn-api.com/api/shop/sections')
+            main = get(f'https://fn-api.com/api/shop/sections?lang={lang}')
             stamp = main.json()['data']['hash']
             res = main.json()['data']['sections']
             with open('cache.json', 'r') as cach:
