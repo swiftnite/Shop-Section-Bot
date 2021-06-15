@@ -17,6 +17,8 @@ class customisation:
     Heading: str = "Today's Shop Sections!" #this will be the text displayed in the post above the sections
     Brackets: str = "True" #NOTE: THIS IS EITHER "True" or "False"! Default is True! True means that the quantity will have brackets around it -> (X7) false means it won't -> X7
     point: str = "-" #this is the thing that will appear before the section name, For example it would currently look like -Marvel (X7), you can change the - before the section name if you wish. NOTE: not everything works!!
+    lang: str = "en" #Your language you would like the shop swctions to post in. Options: ar / de / en / es / es-419 / fr / it / ja / ko / pl / pt-BR / ru / tr
+
 
 '''
 If you have any issues please message me on discord or twitter and I will respond as quick as possible!!
