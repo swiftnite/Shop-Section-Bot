@@ -22,7 +22,7 @@ def main():
         response = get(f'https://fn-api.com/api/shop/sections?lang={lang}')
         if response:
             main = get(f'https://fn-api.com/api/shop/sections?lang={lang}')
-            stamp = main.json()['data']['hash']
+            stamp = main.json()['data']['timestamp']
             res = main.json()['data']['sections']
             with open('cache.json', 'r') as cach:
                 old = json.load(cach)
