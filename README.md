@@ -23,18 +23,11 @@ Then you need to open the config.py file and fill in everything required as well
 You must install python if you haven't already
 You then must do:
 
-**Windows:**
 Open command prompt and enter each line!
 
 `pip install requests`
 
 `pip install tweepy` 
-
-**Linux or Ubuntu:**
-
-`pip3 install requests`
-
-`pip3 install tweepy` 
 
 Then you can run main.py!!
 
